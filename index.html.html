@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malik Shopping Hub</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f6f8;color:#171717}
+header{background:#111;color:#fff;padding:18px 7%;display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:10}
+.logo{font-size:24px;font-weight:800}.logo span{color:#ffb300}
+nav a{color:#fff;text-decoration:none;margin-left:20px;font-size:14px}
+.hero{padding:70px 7%;background:linear-gradient(135deg,#171717,#333);color:#fff}
+.hero h1{font-size:48px;max-width:650px;margin-bottom:15px}.hero p{font-size:18px;color:#ddd;margin-bottom:25px}
+.btn{display:inline-block;background:#ffb300;color:#111;padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:700;border:0;cursor:pointer}
+section{padding:45px 7%}.title{font-size:30px;margin-bottom:25px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 18px #00000012}
+.pic{height:180px;background:#e9eaed;display:flex;align-items:center;justify-content:center;font-size:64px}
+.info{padding:17px}.info h3{margin-bottom:8px}.price{font-weight:800;font-size:20px;margin:10px 0 15px}
+.card button{width:100%}
+.about{background:#fff;border-radius:14px;padding:25px;line-height:1.7}
+footer{background:#111;color:#bbb;text-align:center;padding:25px;margin-top:20px}
+#cart{position:fixed;right:20px;bottom:20px;background:#ffb300;color:#111;padding:14px 18px;border-radius:30px;font-weight:800;box-shadow:0 5px 20px #0003}
+@media(max-width:650px){header{padding:15px 5%}nav a{margin-left:8px}.hero{padding:50px 5%}.hero h1{font-size:36px}section{padding:35px 5%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Malik <span>Shopping Hub</span></div>
+  <nav><a href="#home">Home</a><a href="#products">Products</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <h1>Welcome to Malik Shopping Hub 🛍️</h1>
+  <p>Shop useful products at great prices — simple, fast and convenient.</p>
+  <a class="btn" href="#products">Shop Now</a>
+</section>
+
+<section id="products">
+  <h2 class="title">Featured Products</h2>
+  <div class="products">
+    <article class="card"><div class="pic">⌚</div><div class="info"><h3>Smart Watch</h3><p>Stylish everyday smartwatch.</p><div class="price">Rs. 2,499</div><button class="btn" onclick="add('Smart Watch')">Add to Cart</button></div></article>
+    <article class="card"><div class="pic">🎧</div><div class="info"><h3>Wireless Headphones</h3><p>Comfortable wireless audio.</p><div class="price">Rs. 1,999</div><button class="btn" onclick="add('Wireless Headphones')">Add to Cart</button></div></article>
+    <article class="card"><div class="pic">🎒</div><div class="info"><h3>Travel Bag</h3><p>Strong and practical daily bag.</p><div class="price">Rs. 1,799</div><button class="btn" onclick="add('Travel Bag')">Add to Cart</button></div></article>
+    <article class="card"><div class="pic">📱</div><div class="info"><h3>Mobile Accessories</h3><p>Useful accessories for your phone.</p><div class="price">Rs. 899</div><button class="btn" onclick="add('Mobile Accessories')">Add to Cart</button></div></article>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="title">About Us</h2>
+  <div class="about">Malik Shopping Hub is a general online store concept for everyday products. Add your real products, prices, photos and contact details to start taking orders.</div>
+</section>
+
+<section id="contact">
+  <h2 class="title">Contact</h2>
+  <div class="about">WhatsApp: <strong>03XX-XXXXXXX</strong><br>Email: <strong>your@email.com</strong><br><br><button class="btn" onclick="order()">Order on WhatsApp</button></div>
+</section>
+</main>
+
+<div id="cart">🛒 Cart: <span id="count">0</span></div>
+<footer>© 2026 Malik Shopping Hub — All Rights Reserved</footer>
+
+<script>
+let count=0;
+function add(name){count++;document.getElementById('count').textContent=count;alert(name+' added to cart!');}
+function order(){alert('Please replace the demo WhatsApp number with your real number before taking orders.');}
+</script>
+</body>
+</html>
